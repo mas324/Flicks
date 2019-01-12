@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Movie {
 
-    protected String posterURL;
-    protected String title;
-    protected String overview;
+    private String posterURL;
+    private String title;
+    private String overview;
 
-    public Movie(JSONObject jsonObject) throws JSONException {
+    private Movie(JSONObject jsonObject) throws JSONException {
         posterURL = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
@@ -25,5 +25,17 @@ public class Movie {
             movies.add(new Movie(jsonArray.getJSONObject(i)));
         }
         return movies;
+    }
+
+    public String getPosterURL() {
+        return "https://image.tmdb.org/t/p/w500" + posterURL;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getOverview() {
+        return overview;
     }
 }
