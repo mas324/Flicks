@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.example.maste.flicks.adapters.MovieAdapt;
+import com.example.maste.flicks.adapters.MovieAdapter;
 import com.example.maste.flicks.models.Movie;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         movies = new ArrayList<>();
         RecyclerView movieView = findViewById(R.id.movieView);
-        final MovieAdapt adapt = new MovieAdapt(this, movies);
+        final MovieAdapter adapt = new MovieAdapter(this, movies);
         movieView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         movieView.setAdapter(adapt);
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     movies.addAll(Movie.fromArray(response.getJSONArray("results")));
                     adapt.notifyDataSetChanged();
-                    Log.d("MoviesData", movies.toString());
+                    Log.d("MoviesData", Boolean.toString(movies.isEmpty()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
