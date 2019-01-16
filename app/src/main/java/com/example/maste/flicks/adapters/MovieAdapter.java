@@ -3,7 +3,6 @@ package com.example.maste.flicks.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,16 +50,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             super(itemView);
             title = itemView.findViewById(R.id.movieTitle);
             overview = itemView.findViewById(R.id.movieSum);
+            poster = itemView.findViewById(R.id.moviePoster);
         }
 
         void fill(Movie movie) {
             title.setText(movie.getTitle());
             overview.setText(movie.getOverview());
-            try {
-                GlideApp.with(context).load(movie.getPosterPath()).into(poster);
-            } catch (NullPointerException e) {
-                Log.e("GlideFail", e.getLocalizedMessage());
-            }
+            GlideApp.with(context).load(movie.getPosterPath()).into(poster);
         }
     }
 }
