@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     movies.addAll(Movie.fromArray(response.getJSONArray("results")));
                     adapt.notifyDataSetChanged();
-                    Log.d("MoviesData", Boolean.toString(movies.isEmpty()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
