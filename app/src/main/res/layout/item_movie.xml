@@ -8,10 +8,8 @@
         android:id="@+id/moviePoster"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@id/movieSum"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
         android:contentDescription="@android:string/untitled"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -24,15 +22,19 @@
         android:contentDescription="@android:string/untitled"
         android:text="@android:string/untitled"
         android:textAlignment="center"
-        android:textSize="36sp" />
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/movieSum"
-        android:layout_width="256dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieTitle"
+        android:layout_marginBottom="63dp"
         android:layout_toEndOf="@+id/moviePoster"
         android:contentDescription="@android:string/untitled"
         android:text="@android:string/untitled"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 </RelativeLayout>
