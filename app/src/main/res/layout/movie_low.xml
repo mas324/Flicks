@@ -1,78 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/darker_gray"
+    android:paddingTop="0dp"
+    android:paddingBottom="5dp">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/movieSum"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorDark"
+        android:contentDescription="Movie picture"
+        android:paddingStart="0dp"
+        android:paddingEnd="5dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignEnd="@+id/moviePoster"
+        android:layout_alignBottom="@+id/moviePoster" />
+
+    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moviePoster"
+        android:layout_alignStart="@id/moviePoster"
+        android:layout_alignEnd="@id/moviePoster"
+        android:background="@color/colorDark"
+        android:paddingStart="0dp"
+        android:paddingEnd="5dp"
+        app:srb_isIndicator="true"
+        app:srb_numberOfStars="10"
+        app:srb_rating="5"
+        app:srb_stepSize="0.1" />
+
+    <TextView
+        android:id="@+id/movieTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
-        android:paddingTop="0dp"
-        android:paddingBottom="5dp">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/moviePoster"
+        android:background="@color/colorDark"
+        android:contentDescription="Movie title"
+        android:text="@android:string/untitled"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/moviePoster"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/movieSum"
-            android:layout_alignParentTop="true"
-            android:background="@color/colorDark"
-            android:contentDescription="Movie picture"
-            android:paddingStart="0dp"
-            android:paddingEnd="5dp"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignEnd="@+id/moviePoster"
-            android:layout_alignBottom="@+id/moviePoster" />
-
-        <com.iarcuschin.simpleratingbar.SimpleRatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/moviePoster"
-            android:layout_alignStart="@id/moviePoster"
-            android:layout_alignEnd="@id/moviePoster"
-            android:background="@color/colorDark"
-            android:paddingStart="0dp"
-            android:paddingEnd="5dp"
-            app:srb_isIndicator="true"
-            app:srb_numberOfStars="10"
-            app:srb_rating="5"
-            app:srb_stepSize="0.1" />
-
-        <TextView
-            android:id="@+id/movieTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/moviePoster"
-            android:background="@color/colorDark"
-            android:contentDescription="Movie title"
-            android:text="@android:string/untitled"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/movieSum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/movieTitle"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="-15dp"
-            android:layout_toEndOf="@id/moviePoster"
-            android:background="@color/colorDark"
-            android:contentDescription="Movie summary"
-            android:text="@android:string/untitled"
-            android:textAlignment="viewStart"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
-    </RelativeLayout>
-</merge>
+    <TextView
+        android:id="@+id/movieSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movieTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-15dp"
+        android:layout_toEndOf="@id/moviePoster"
+        android:background="@color/colorDark"
+        android:contentDescription="Movie summary"
+        android:text="@android:string/untitled"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+</RelativeLayout>
