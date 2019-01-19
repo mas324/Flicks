@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/darker_gray"
     android:paddingTop="0dp"
     android:paddingBottom="5dp">
 
@@ -64,7 +63,7 @@
         android:layout_below="@+id/movieTitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="-32dp"
         android:layout_toEndOf="@id/moviePoster"
         android:background="@color/colorDark"
         android:contentDescription="Movie summary"
@@ -72,4 +71,5 @@
         android:textAlignment="viewStart"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
+
 </RelativeLayout>

@@ -15,15 +15,15 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private final int HIGH = 2;
     private final int LOW = 1;
-    private List<Movie> movies;
-    private Context context;
+    private final List<Movie> movies;
+    private final Context context;
 
     public MovieAdapter(Context context, List<Movie> movies) {
         this.movies = movies;
         this.context = context;
     }
 
-    public Context getContext() {
+    Context getContext() {
         return context;
     }
 
@@ -42,8 +42,10 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         if (i == LOW)
             holder = new RatingLow(this, inflater.inflate(R.layout.movie_low, parent, false));
-        else
+        else if (i == HIGH)
             holder = new RatingHigh(this, inflater.inflate(R.layout.movie_high, parent, false));
+        else
+            holder = new RatingLow(this, inflater.inflate(R.layout.movie_low, parent, false));
 
         return holder;
     }
@@ -52,8 +54,10 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() == LOW)
             ((RatingLow) holder).fill(movies.get(position));
-        else
+        else if (holder.getItemViewType() == HIGH)
             ((RatingHigh) holder).fill(movies.get(position));
+        else
+            ((RatingLow) holder).fill(movies.get(position));
     }
 
     @Override

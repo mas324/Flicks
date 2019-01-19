@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.load.DataSource;
@@ -16,15 +15,16 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.maste.flicks.R;
 import com.example.maste.flicks.models.Movie;
+import com.iarcuschin.simpleratingbar.SimpleRatingBar;
 
-public class RatingLow extends RecyclerView.ViewHolder {
-    private MovieAdapter movieAdapter;
-    private TextView title;
-    private TextView overview;
-    private ImageView poster;
-    private RatingBar ratingBar;
+class RatingLow extends RecyclerView.ViewHolder {
+    private final MovieAdapter movieAdapter;
+    private final TextView title;
+    private final TextView overview;
+    private final ImageView poster;
+    private final SimpleRatingBar ratingBar;
 
-    public RatingLow(MovieAdapter adapter, @NonNull View itemView) {
+    RatingLow(MovieAdapter adapter, @NonNull View itemView) {
         super(itemView);
         movieAdapter = adapter;
         title = itemView.findViewById(R.id.movieTitle);
@@ -33,7 +33,7 @@ public class RatingLow extends RecyclerView.ViewHolder {
         ratingBar = itemView.findViewById(R.id.ratingBar);
     }
 
-    public void fill(Movie movie) {
+    void fill(Movie movie) {
         title.setText(movie.getTitle());
         overview.setText(movie.getOverview());
         ratingBar.setRating(movie.getRating().floatValue());

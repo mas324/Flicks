@@ -13,21 +13,32 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.maste.flicks.R;
 import com.example.maste.flicks.models.Movie;
+import com.example.maste.flicks.models.VideoPlay;
 import com.iarcuschin.simpleratingbar.SimpleRatingBar;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
-public class RatingHigh extends RecyclerView.ViewHolder {
-    private MovieAdapter movieAdapter;
-    private ImageView poster;
-    private SimpleRatingBar ratingBar;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    public RatingHigh(MovieAdapter movieAdapter, View itemView) {
+import java.util.ArrayList;
+import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
+
+class RatingHigh extends RecyclerView.ViewHolder {
+    private final MovieAdapter movieAdapter;
+    private final ImageView poster;
+    private final SimpleRatingBar ratingBar;
+
+    RatingHigh(MovieAdapter movieAdapter, View itemView) {
         super(itemView);
         this.movieAdapter = movieAdapter;
         poster = itemView.findViewById(R.id.moviePoster);
         ratingBar = itemView.findViewById(R.id.ratingBar);
     }
 
-    public void fill(Movie movie) {
+    void fill(Movie movie) {
         ratingBar.setRating(movie.getRating().floatValue());
         final ProgressBar progressBar = itemView.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
@@ -45,5 +56,31 @@ public class RatingHigh extends RecyclerView.ViewHolder {
             }
 
         }).into(poster);
+        play(movie);
+    }
+
+    void play(Movie movie) {
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        final List<VideoPlay> playList = new ArrayList<>();
+        final String VID_PATH = String.format("https://api.themoviedb.org/3/movie/%s/trailers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed", movie.getId());
+        client.get(VID_PATH, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    playList.addAll(VideoPlay.fromArray(response.getJSONArray("youtube")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+        });
+
+        MoviePlayer player = new MoviePlayer(itemView, playList);
+        player.play();
     }
 }
