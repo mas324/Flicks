@@ -23,7 +23,7 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_alignEnd="@+id/moviePoster"
         android:layout_alignBottom="@+id/moviePoster" />
 

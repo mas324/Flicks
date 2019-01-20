@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.maste.flicks.R;
 import com.example.maste.flicks.models.VideoPlay;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -20,7 +19,7 @@ class MoviePlayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitial
 
     public MoviePlayer(View view, List<VideoPlay> playList) {
         this.playList = playList;
-        view.findViewById(R.id.player);
+        //view.findViewById(R.id.player);
     }
 
     public void play() {
