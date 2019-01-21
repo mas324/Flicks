@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flicks</string>
+    <string name="poster">Movie poster</string>
+    <string name="backdrop">Movie backdrop</string>
+    <string name="title">Movie title</string>
+    <string name="summary">Movie overview</string>
 </resources>

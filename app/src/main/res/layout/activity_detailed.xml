@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="42sp" />
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/movieTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+        </com.google.android.youtube.player.YouTubePlayerView>
+
+        <ImageView
+            android:id="@+id/trailerDefault"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/backdrop"
+            android:visibility="gone"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+            android:id="@+id/movieRating"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/movieTrailer"
+            app:srb_isIndicator="true"
+            app:srb_numberOfStars="10"
+            app:srb_rating="5"
+            app:srb_stepSize="0.1" />
+
+        <TextView
+            android:id="@+id/movieSum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movieRating"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</ScrollView>
