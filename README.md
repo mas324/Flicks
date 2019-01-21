@@ -1,7 +1,7 @@
 # Flicks
 Flicks is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-## Flix Part 2
+## Flicks Part 2
 
 ### User Stories
 
@@ -18,7 +18,7 @@ Flicks is an app that allows users to browse movies from the [The Movie Database
 
 ### App Walkthough GIF
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="walkthrough_2.gif" width=250><br>
 
 ### Notes
 Describe any challenges encountered while building the app.
@@ -26,7 +26,7 @@ Describe any challenges encountered while building the app.
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
 - [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
-
+- [SimpleRatingBar](https://github.com/FlyingPumba/SimpleRatingBar) - More intuitive rating bar compared to the integrated one
 ---
 
 ## Flicks Part 1
