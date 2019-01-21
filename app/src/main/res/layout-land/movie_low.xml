@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="0dp"
@@ -14,7 +14,7 @@
         android:layout_alignBottom="@id/movieSum"
         android:layout_alignParentTop="true"
         android:background="@color/colorDark"
-        android:contentDescription="Movie picture"
+        android:contentDescription="@string/poster"
         android:paddingStart="0dp"
         android:paddingEnd="5dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -27,22 +27,6 @@
         android:layout_alignEnd="@+id/moviePoster"
         android:layout_alignBottom="@+id/moviePoster" />
 
-    <com.iarcuschin.simpleratingbar.SimpleRatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/moviePoster"
-        android:layout_alignStart="@id/moviePoster"
-        android:layout_alignEnd="@id/moviePoster"
-        android:background="@color/colorDark"
-        android:paddingStart="0dp"
-        android:paddingEnd="5dp"
-        android:visibility="visible"
-        app:srb_isIndicator="true"
-        app:srb_numberOfStars="10"
-        app:srb_rating="5"
-        app:srb_stepSize="0.1" />
-
     <TextView
         android:id="@+id/movieTitle"
         android:layout_width="match_parent"
@@ -51,8 +35,7 @@
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/moviePoster"
         android:background="@color/colorDark"
-        android:contentDescription="Movie title"
-        android:text="@android:string/untitled"
+        android:contentDescription="@string/title"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
@@ -66,8 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@id/moviePoster"
         android:background="@color/colorDark"
-        android:contentDescription="Movie summary"
-        android:text="@android:string/untitled"
+        android:contentDescription="@string/summary"
         android:textAlignment="viewStart"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
