@@ -21,7 +21,7 @@ Flicks is an app that allows users to browse movies from the [The Movie Database
 <img src="walkthrough_2.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+There was a race condition when starting the detailed screen. Player started before video info was collected.
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
