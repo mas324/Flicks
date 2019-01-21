@@ -15,7 +15,6 @@
             android:id="@+id/movieTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@android:string/untitled"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="42sp" />
@@ -57,7 +56,6 @@
             android:layout_below="@+id/movieRating"
             android:paddingTop="5dp"
             android:paddingBottom="10dp"
-            android:text="@android:string/untitled"
             android:textAlignment="viewStart"
             android:textColor="@android:color/white"
             android:textSize="18sp" />

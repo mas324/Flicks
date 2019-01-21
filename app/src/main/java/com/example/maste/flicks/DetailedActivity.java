@@ -74,7 +74,10 @@ public class DetailedActivity extends YouTubeBaseActivity {
                             Log.d("MoviePlay", "Successfully initialized player");
                             if (!videoPlayList.isEmpty()) {
                                 Log.d("MoviePlaylist", "Playlist has stuff");
-                                youTubePlayer.cueVideos(videoPlayList);
+                                if (movie.getRating() >= 5)
+                                    youTubePlayer.loadVideos(videoPlayList);
+                                else
+                                    youTubePlayer.cueVideos(videoPlayList);
                             } else {
                                 Log.e("MoviePlaylist", "Playlist is empty");
                                 fallback();
