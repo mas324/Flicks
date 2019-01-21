@@ -49,7 +49,7 @@ Describe any challenges encountered while building the app.
 <img src="walkthrough.gif" width=250><br>
 
 ### Notes
-Small trouble while trying to figure out why Glide returned null
+
 
 ### Open-source libraries used
 
