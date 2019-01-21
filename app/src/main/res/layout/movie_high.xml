@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/moviePoster"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_alignBottom="@id/movieSum"
         android:layout_alignParentTop="true"
         android:background="@color/colorDark"
@@ -23,9 +23,10 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         android:layout_alignEnd="@+id/moviePoster"
-        android:layout_alignBottom="@+id/moviePoster" />
+        android:layout_alignBottom="@+id/moviePoster"
+        android:visibility="visible" />
 
     <com.iarcuschin.simpleratingbar.SimpleRatingBar
         android:id="@+id/ratingBar"
@@ -37,6 +38,7 @@
         android:background="@color/colorDark"
         android:paddingStart="0dp"
         android:paddingEnd="5dp"
+        android:visibility="gone"
         app:srb_isIndicator="true"
         app:srb_numberOfStars="10"
         app:srb_rating="5"

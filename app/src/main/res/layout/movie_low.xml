@@ -63,7 +63,6 @@
         android:layout_below="@+id/movieTitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="-15dp"
         android:layout_toEndOf="@id/moviePoster"
         android:background="@color/colorDark"
         android:contentDescription="Movie summary"

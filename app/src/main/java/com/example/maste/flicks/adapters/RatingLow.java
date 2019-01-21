@@ -52,5 +52,6 @@ class RatingLow extends RecyclerView.ViewHolder {
                 return false;
             }
         }).into(poster);
+        ratingBar.setVisibility(View.GONE);
     }
 }
