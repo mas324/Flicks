@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Movie {
 
+    private Integer id;
     private String posterPath;
     private String title;
     private String overview;
@@ -16,6 +17,7 @@ public class Movie {
     private Double rating;
 
     private Movie(JSONObject jsonObject) throws JSONException {
+        id = jsonObject.getInt("id");
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
@@ -37,6 +39,10 @@ public class Movie {
 
     public String getBackdropPath() {
         return String.format("https://image.tmdb.org/t/p/original/%s", backdropPath);
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getTitle() {
