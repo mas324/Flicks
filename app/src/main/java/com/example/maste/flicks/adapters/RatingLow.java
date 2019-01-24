@@ -21,20 +21,25 @@ import com.example.maste.flicks.models.Movie;
 
 import org.parceler.Parcels;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 class RatingLow extends RecyclerView.ViewHolder {
     private MovieAdapter movieAdapter;
-    private TextView title;
-    private TextView overview;
-    private ImageView poster;
-    private RelativeLayout layout;
+    protected @BindView(R.id.movieTitle)
+    TextView title;
+    protected @BindView(R.id.movieSum)
+    TextView overview;
+    protected @BindView(R.id.moviePoster)
+    ImageView poster;
+    protected @BindView(R.id.movieItem)
+    RelativeLayout layout;
 
     RatingLow(MovieAdapter adapter, @NonNull View itemView) {
         super(itemView);
         movieAdapter = adapter;
-        title = itemView.findViewById(R.id.movieTitle);
-        overview = itemView.findViewById(R.id.movieSum);
-        poster = itemView.findViewById(R.id.moviePoster);
-        layout = itemView.findViewById(R.id.movieItem);
+        ButterKnife.bind(this, itemView);
     }
 
     void fill(final Movie movie) {
@@ -54,7 +59,7 @@ class RatingLow extends RecyclerView.ViewHolder {
                 progressBar.setVisibility(View.GONE);
                 return false;
             }
-        }).into(poster);
+        }).transform(new RoundedCornersTransformation(10, 15)).into(poster);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
