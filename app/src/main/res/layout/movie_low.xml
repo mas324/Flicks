@@ -15,8 +15,6 @@
         android:layout_alignParentTop="true"
         android:background="@color/colorDark"
         android:contentDescription="@string/poster"
-        android:paddingStart="0dp"
-        android:paddingEnd="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ProgressBar
@@ -25,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignEnd="@+id/moviePoster"
-        android:layout_alignBottom="@+id/moviePoster" />
+        android:layout_alignBottom="@id/movieSum"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/movieTitle"
@@ -48,6 +47,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@id/moviePoster"
+        android:paddingBottom="5dp"
         android:background="@color/colorDark"
         android:contentDescription="@string/summary"
         android:textAlignment="viewStart"

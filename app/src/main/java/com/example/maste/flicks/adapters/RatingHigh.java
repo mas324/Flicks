@@ -52,7 +52,7 @@ class RatingHigh extends RecyclerView.ViewHolder {
                 return false;
             }
 
-        }).transform(new RoundedCornersTransformation(10, 20)).into(poster);
+        }).transform(new RoundedCornersTransformation(75, 25)).into(poster);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -59,7 +59,7 @@ class RatingLow extends RecyclerView.ViewHolder {
                 progressBar.setVisibility(View.GONE);
                 return false;
             }
-        }).transform(new RoundedCornersTransformation(10, 15)).into(poster);
+        }).transform(new RoundedCornersTransformation(25, 10)).into(poster);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
