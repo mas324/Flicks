@@ -22,7 +22,8 @@
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/movieTrailer"
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="250dp"
+            android:layout_below="@+id/movieTitle">
 
         </com.google.android.youtube.player.YouTubePlayerView>
 
@@ -30,6 +31,7 @@
             android:id="@+id/trailerDefault"
             android:layout_width="match_parent"
             android:layout_height="250dp"
+            android:layout_below="@+id/movieTitle"
             android:contentDescription="@string/backdrop"
             android:visibility="gone"
             tools:srcCompat="@tools:sample/avatars" />
@@ -37,6 +39,9 @@
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/movieTitle"
+            android:layout_alignBottom="@+id/trailerDefault"
+            android:layout_toEndOf="@+id/trailerDefault"
             android:visibility="gone" />
 
         <com.iarcuschin.simpleratingbar.SimpleRatingBar
