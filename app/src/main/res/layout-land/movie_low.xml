@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="0dp"
-    android:paddingBottom="5dp">
+    android:paddingBottom="2dp">
 
     <ImageView
         android:id="@+id/moviePoster"
@@ -15,8 +15,6 @@
         android:layout_alignParentTop="true"
         android:background="@color/colorDark"
         android:contentDescription="@string/poster"
-        android:paddingStart="0dp"
-        android:paddingEnd="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ProgressBar

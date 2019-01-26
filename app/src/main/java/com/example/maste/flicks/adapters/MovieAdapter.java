@@ -13,8 +13,7 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final int HIGH = 2;
-    private final int LOW = 1;
+    private final int HIGH = 10;
     private final List<Movie> movies;
     private final Context context;
 
@@ -29,32 +28,25 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public int getItemViewType(int position) {
-        if (movies.get(position).getRating() < 5)
-            return LOW;
-        else
+        if (movies.get(position).getRating() >= 5)
             return HIGH;
+        else
+            return 4;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        RecyclerView.ViewHolder holder;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        if (i == LOW)
-            holder = new RatingLow(this, inflater.inflate(R.layout.movie_low, parent, false));
-        else if (i == HIGH)
-            holder = new RatingHigh(this, inflater.inflate(R.layout.movie_high, parent, false));
+        if (i == HIGH)
+            return new RatingHigh(this, inflater.inflate(R.layout.movie_high, parent, false));
         else
-            holder = new RatingLow(this, inflater.inflate(R.layout.movie_low, parent, false));
-
-        return holder;
+            return new RatingLow(this, inflater.inflate(R.layout.movie_low, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder.getItemViewType() == LOW)
-            ((RatingLow) holder).fill(movies.get(position));
-        else if (holder.getItemViewType() == HIGH)
+        if (holder.getItemViewType() == HIGH)
             ((RatingHigh) holder).fill(movies.get(position));
         else
             ((RatingLow) holder).fill(movies.get(position));

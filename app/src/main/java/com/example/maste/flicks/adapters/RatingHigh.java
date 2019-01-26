@@ -19,16 +19,21 @@ import com.example.maste.flicks.models.Movie;
 
 import org.parceler.Parcels;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 class RatingHigh extends RecyclerView.ViewHolder {
     private MovieAdapter movieAdapter;
-    private ImageView poster;
-    private RelativeLayout layout;
+    protected @BindView(R.id.moviePoster)
+    ImageView poster;
+    protected @BindView(R.id.movieItem)
+    RelativeLayout layout;
 
-    RatingHigh(MovieAdapter movieAdapter, View itemView) {
+    RatingHigh(MovieAdapter adapter, View itemView) {
         super(itemView);
-        this.movieAdapter = movieAdapter;
-        poster = itemView.findViewById(R.id.moviePoster);
-        layout = itemView.findViewById(R.id.movieItem);
+        movieAdapter = adapter;
+        ButterKnife.bind(this, itemView);
     }
 
     void fill(final Movie movie) {
@@ -47,7 +52,7 @@ class RatingHigh extends RecyclerView.ViewHolder {
                 return false;
             }
 
-        }).into(poster);
+        }).transform(new RoundedCornersTransformation(75, 25)).into(poster);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

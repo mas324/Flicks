@@ -32,12 +32,16 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class DetailedActivity extends YouTubeBaseActivity {
 
     private Movie movie;
-    private YouTubePlayerView playerView;
+    protected @BindView
+            (R.id.movieTrailer)
+    YouTubePlayerView playerView;
     private List<String> videoPlayList;
     private Context context;
 
@@ -46,7 +50,7 @@ public class DetailedActivity extends YouTubeBaseActivity {
         super.onCreate(bundle);
         setContentView(R.layout.activity_detailed);
         movie = Parcels.unwrap(getIntent().getParcelableExtra("Data"));
-
+        ButterKnife.bind(this);
         context = this;
 
         TextView title = findViewById(R.id.movieTitle);

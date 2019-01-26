@@ -33,4 +33,7 @@ dependencies {
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     implementation 'org.parceler:parceler-api:1.1.11'
     annotationProcessor 'org.parceler:parceler:1.1.11'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
 }
